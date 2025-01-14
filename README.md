@@ -1,71 +1,18 @@
-# Aplicación de Lista de Libros 📚
+Ejercicio de entrevista, migrado libre
+Don Miguel lleva 10 años vendiendo por Mercado Libre, pero tiene un problema, el padece de xantofobia (miedo al color amarillo), por lo que entrar a la web de Mercado Libre le produce un stress muy grande.
 
-¡Hola, Gracias por tu visita!  
-Este challenge lo realicé a modo de práctica y me encontré con un montón de desafíos divertidos y cosas nuevas que aprendí (como el evento de `storage`). No tuve suficiente tiempo para dedicarle todo el amor que se merece, por lo que el resultado es limitado.  
+Su hijo Ángel, que es programador, le ha dicho que Mercado Libre tiene una API abierta que permite hacer búsquedas de productos con algunos parámetros, por ende podría crear su propia web para presentar sus productos. Pero Ángel recién está iniciando en el mundo de frontend y no sabe como hacerlo.
 
-He dejado algunos comentarios en el código para explicar las decisiones tomadas y he intentado que sea lo más sencillo posible.  
+Ángel escuchó que Next.js, TypeScript Y Tailwindcss son buenas herramientas que podrían hacer el trabajo más fácil, así que nos dejó este proyecto preparado para que podamos ponernos a trabajar.
 
-¡Ojalá te diviertas viéndolo, tanto como yo me divertí haciéndolo!  
+Recursos
+Ángel indagó un poco y descubrió que el Seller ID de la tienda de Miguel es 179571326, y que la API de Mercado Libre tiene un endpoint que permite buscar productos de un vendedor en particular, el endpoint es https://api.mercadolibre.com/sites/MLA/search?seller_id=179571326. También nos comentó que ingresando al endpoint desde el navegador podemos ver la respuesta en formato JSON junto con algo de información. El resto de la documentación de la API está disponible en este link.
 
-## 📌 Objetivo  
-Desarrollar una pequeña aplicación web que permita a los usuarios ver un catálogo de libros y gestionar una lista de lectura de manera sencilla y agradable.  
-
-## 📝 Contexto  
-Somos un sello editorial de libros multinacional. Queremos ofrecer a nuestro público una forma de ver nuestro catálogo y guardar los libros que les interesen en una lista de lectura.  
-
-### Consideraciones:  
-- No sabemos si el framework utilizado será el definitivo, pero queremos reutilizar el máximo de código posible.  
-- La aplicación debe ser fácil de usar y agradable a la vista.  
-- La mayoría de nuestros usuarios (80%) acceden desde navegadores de escritorio.  
-- Usamos el archivo `books.json` para los datos de los libros. Puedes añadir más libros si deseas, siempre que respetes la misma estructura.  
-
-## 🎯 Requisitos  
-
-### Funcionalidad  
-1. **Visualización de Libros Disponibles**  
-   - Mostrar una lista de libros disponibles que el usuario pueda revisar.  
-
-2. **Creación de Lista de Lectura**  
-   - Los usuarios deben poder añadir libros a su lista de lectura.  
-   - La interfaz debe mostrar claramente qué libros están en la lista de lectura y cuáles no.  
-   - Los libros deben poder moverse entre la lista de lectura y la lista de disponibles.  
-
-3. **Filtrado por Género**  
-   - Permitir a los usuarios filtrar los libros por género.  
-   - Mostrar un contador con el número total de libros disponibles, los libros en la lista de lectura y los disponibles en el género seleccionado.  
-
-4. **Sincronización de Estado**  
-   - Mantener sincronizado el estado global entre la lista de disponibles y la lista de lectura.  
-
-5. **Persistencia de Datos**  
-   - Usar el almacenamiento local del navegador para guardar la lista de lectura.  
-   - La lista debe mantenerse al recargar la página.  
-
-6. **Sincronización entre Pestañas**  
-   - Cambios realizados en una pestaña deben reflejarse en otra sin necesidad de un backend.  
-
-7. **Despliegue**  
-   - La aplicación debe estar desplegada en un servicio de hosting gratuito como [Netlify](https://www.netlify.com), [Vercel](https://vercel.com) o [Firebase](https://firebase.google.com).  
-
-8. **Test**  
-   - La aplicación debe incluir al menos un test. Implementa el test que consideres más importante para tu proyecto.  
-
-## 🛠️ Consejos sobre el Código  
-
-1. **Estructura del Código**  
-   - Organiza el código para que sea fácil de leer y entender.  
-
-2. **Semántica HTML**  
-   - Asegúrate de usar HTML semántico y accesible.  
-
-3. **Colaboración en Equipo**  
-   - Prepara el proyecto pensando en que otros puedan trabajar en él en el futuro. Incluye scripts en el `package.json`, documentación mínima en el `README` y comentarios en el código si es necesario.  
-
-4. **Formato del Código**  
-   - Usa herramientas como [Prettier](https://prettier.io) para mantener un formato consistente.  
-
-5. **Preparación para Producción**  
-   - Optimiza las imágenes y minimiza el código para asegurar un buen rendimiento.  
-
-
-¡Gracias por revisar este proyecto! Si tienes algún comentario o sugerencia, no dudes en abrir un issue. 🙌  
+Requerimientos
+ Al entrar a la ruta / deberíamos ver un listado de todos los productos de Miguel en forma de grilla.
+ Al entrar a la ruta /[category_id] deberíamos ver un listado de productos correspondientes a esa categoría.
+ En todas las rutas, deberíamos ver un menú a la izquierda con las categorías disponibles. Las categorías deberían mostrarse en forma de árbol, es decir, si una categoría tiene subcategorías, deberían mostrarse como un submenú.
+ Las categorías deberían iniciar contraídas, y al hacer click un botón de - o + deberían expandirse o contraerse individualmente.
+ Las categorías deberían mantener su estado de expansión/contracción al navegar entre rutas.
+ Al clickear una categoría, deberíamos navegar a la ruta /[category_id] correspondiente.
+ Al clickear un producto debería redirigirnos a la web de Mercado Libre para ese producto.
