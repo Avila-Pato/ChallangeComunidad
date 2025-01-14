@@ -1,10 +1,9 @@
+import Products from "./components/Products";
+import { getProducts } from "./services";
 
 
-export default function Home() {
-  return (
-    <div className="">
-      <h1>Hola mundo</h1>
-      
-    </div>
-  );
+export default  async function HomePage() {
+const products = await getProducts();
+
+  return <Products products={products} />
 }
