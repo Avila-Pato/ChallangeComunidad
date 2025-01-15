@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { getCategories, getProducts } from "./services";
-import { Category } from "@/types";
+import ListOfCategories from "./components/ListOfCategories";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,27 +9,26 @@ export const metadata: Metadata = {
 };
 
 //filtrar subCategorias de las categorias
+// function ListOfCategories({ categories, parentCategory = null,}: {categories: Category[];
+//   parentCategory?: string | null}){
+//     const categoriesRender = categories.filter(({parentId}) => {
+//       return parentCategory === parentId
+//     })
+//     return (
+//       <ul className="pl-4">
+//         {categoriesRender.map((category) => (
+//           <li key={category.id}>
 
-function ListOfCategories({ categories, parentCategory = null,}: {categories: Category[];
-  parentCategory?: string | null}){
-    const categoriesRender = categories.filter(({parentId}) => {
-      return parentCategory === parentId
-    })
-    return (
-      <ul className="pl-4">
-        {categoriesRender.map((category) => (
-          <li key={category.id}>
+//           {category.name}
+//           <ListOfCategories categories={categories} parentCategory={category.id} />
+//           </li>
+//         ))}
+//       </ul>
+//     )
 
-          {category.name}
-          <ListOfCategories categories={categories} parentCategory={category.id} />
-          </li>
-        ))}
-      </ul>
-    )
+// }
 
-}
-
-// Componente para listar categorías
+// Componente para listar solo categorías
 // function ListCategories({ categories }: { categories: Category[] }) {
 //   const rootCategories = categories.filter(({ parentId }) => !parentId);
 
