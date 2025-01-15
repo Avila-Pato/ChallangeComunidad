@@ -38,7 +38,11 @@ Su hijo Ángel, que es programador, descubrió que Mercado Libre tiene una API a
 ## 🚀 Tecnologías Sugeridas  
 - **Next.js**: Framework de React para desarrollo web con SSR y generación de sitios estáticos.  
 - **TypeScript**: Superset de JavaScript que agrega tipado estático.  
-- **Tailwind CSS**: Framework CSS para diseñar interfaces modernas y responsivas.  
+- **Tailwind CSS**: Framework CSS para diseñar interfaces modernas y responsivas.
+
+- ## Referencia
+ ![Screenshot_15-1-2025_143444_localhost](https://github.com/user-attachments/assets/cd584255-24f4-470a-b8ec-d72c357c0a6e)
+
 
 ---
 
