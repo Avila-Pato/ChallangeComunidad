@@ -1,6 +1,7 @@
 "use client";
 
 import { Category } from "@/types";
+import Link from "next/link";
 import { useState } from "react";
 
 function CategoryItem ({
@@ -26,7 +27,10 @@ function CategoryItem ({
                     {expanded ? "-" : "+"} 
                 </button>
             ) : null}
-            {category.name}
+                {/* Link de la categoria por filtro de busqueda */}
+           <Link href={`/${category.id}`}> {category.name}</Link>
+
+
             {expanded ? <ListOfCategories categories={categories} parentCategory={category.id}  />
             : null}
         </li>
