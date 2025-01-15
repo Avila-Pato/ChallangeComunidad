@@ -2,8 +2,14 @@ import Products from "@/app/components/Products";
 import { getProducts } from "../services";
 
 
-export default async function CategoryPage({ params: { category } }: { params: { category: string } }) {
 
+export default async function ProductsPage({ 
+    params: {
+      segments: [category],
+     },
+   }: {
+     params: { segments: string[] } 
+    }) {
 
     const products = await getProducts(category);
 
